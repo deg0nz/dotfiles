@@ -10,9 +10,13 @@ echo "Installing all the packages"
 apt install -y \
     tmux \
     vim \
+    htop \
     curl \
     fonts-powerline \
-    fish
+    bat \
+    btop \
+    bmon \
+    fish \
 
 echo "Changing default shell to fish"
 chsh --shell $(which fish)
