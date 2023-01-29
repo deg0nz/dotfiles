@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export DOTFILES_ROOT=$(pwd)
+
 ## Helper functions
 
 function yes_or_no {
@@ -21,8 +23,8 @@ echo ""
 SYS=$(uname)
 
 case $SYS in
-    Linux) echo "Detected Linux" && ./linux/install-linux.sh  ;;
-    Darwin) echo "Detected macOS" && ./macos/install-macos.sh ;;
+    Linux) echo "Detected Linux" && $DOTFILES_ROOT/linux/install-linux.sh  ;;
+    Darwin) echo "Detected macOS" && $DOTFILES_ROOT/macos/install-macos.sh ;;
 esac
 
 exit 0

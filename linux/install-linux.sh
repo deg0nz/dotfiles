@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo ./debian/install-debian.sh
+sudo $DOTFILES_ROOT/linux/debian/install-debian.sh
