@@ -7,16 +7,18 @@ echo "Updating APT"
 apt update
 
 echo "Installing all the packages"
-apt install -y \
-    tmux \
-    vim \
-    htop \
-    curl \
-    fonts-powerline \
-    bat \
-    btop \
-    bmon \
-    fish \
+apt-cache --generate pkgnames \
+| grep --line-regexp --fixed-strings \
+    -e tmux \
+    -e vim \
+    -e htop \
+    -e curl \
+    -e fonts-powerline \
+    -e bat \
+    -e btop \
+    -e bmon \
+    -e fish \
+| xargs apt install --yes
 
 echo "Changing default shell to fish"
 chsh --shell $(which fish)
